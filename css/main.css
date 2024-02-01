@@ -910,7 +910,7 @@ video {
 }
 
 .bg-header {
-  background-image: url('/src/img/shop-full.jpg');
+  background-image: url('../src/img/shop-full.jpg');
 }
 
 .bg-cover {
