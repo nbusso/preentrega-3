@@ -33,7 +33,10 @@ export const mostrarCarrito = carrito => {
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
     console.log(localStorage.getItem('carrito'));
-    document.getElementById('contadorCarrito').innerText = carrito.length;
+    document.getElementById('contadorCarrito').innerText = carrito.reduce(
+        (accumulator, item) => accumulator + item.cantidad, 
+        0,
+    );
 }
 
 

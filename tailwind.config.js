@@ -10,6 +10,9 @@ module.exports = {
         'cyberpunk-amarillo-1': '#F2E307',
         'cyberpunk-amarillo-2': '#F2CC0F'
       },
+      backgroundImage: {
+        'header': "url('/src/img/shop-full.jpg')"
+      }
     },
     
   },
