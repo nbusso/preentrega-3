@@ -69,7 +69,10 @@
         </div>
         <div id="totales" class="flex flex-row-reverse justify-between mt-4 pt-3 border-t">
         <p>Total: <span id="suma" class="font-bold">$ </span></p>
-        <button id="vaciarCarrito" class="bg-red-600 text-gray-50 hover:bg-gray-50 hover:text-red-600 duration-300 px-2">Vaciar</button>
+        <div>
+            <button id="comprarCarrito" class="bg-green-600 text-gray-50 hover:bg-gray-50 hover:text-green-950 duration-300 px-2">Comprar</button>
+            <button id="vaciarCarrito" class="bg-red-600 text-gray-50 hover:bg-gray-50 hover:text-red-600 duration-300 px-2">Vaciar</button>
+        </div>
         </div>
     </div>
 
@@ -80,8 +83,7 @@
         <span id="contadorCarrito" class="fixed block text-black bottom-[42px] right-[10px] bg-gray-50 px-1 rounded-md"></span>
     </div>
 
-    
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="./src/js/productos.js"></script>
     <script type="module" src="./src/js/carrito.js"></script>
     <script type="module" src="./src/js/main.js"></script>

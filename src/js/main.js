@@ -1,8 +1,8 @@
 // imports
 import { productos } from './db_productos.js'
 import { mostrarProductos, filtroCategoria, ordenarNombreAsc, ordenarNombreDesc, ordenarPrecioAsc, ordenarPrecioDesc, filtroPrecio } from './productos.js'
-import { agregarAlCarrito, borrarDeCarrito, mostrarCarrito } from './carrito.js'
-import { carrito, vaciarCarrito } from './carrito.js'
+import { agregarAlCarrito, borrarDeCarrito, mostrarCarrito, carrito, vaciarCarrito, comprarCarrito } from './carrito.js'
+
 
 
 
@@ -29,18 +29,16 @@ const ordPrecioDesc = document.getElementById('ordPrecioDesc');
 //carrito
 const btnCarrito = document.getElementById('btnCarrito');
 const btnVaciarCarrito = document.getElementById('vaciarCarrito');
+const btnComprarCarrito = document.getElementById('comprarCarrito');
 
 
 // variables
-let filtro = '';
-
+let productoFiltrado = productos;
 
 
 // eventos de inicio
 document.addEventListener('DOMContentLoaded', mostrarProductos(productos));
-document.addEventListener('DOMContentLoaded', () => {
-    mostrarCarrito(carrito)
-});
+mostrarCarrito(carrito)
 
 inicio.addEventListener('click', () => {
     mostrarProductos(productos);
@@ -48,45 +46,47 @@ inicio.addEventListener('click', () => {
 
 // eventos > filtros
 catArmasDeFuego.addEventListener('click', () => {
-    filtro = 'armas de fuego';
-    mostrarProductos(filtroCategoria(productos, filtro));
+    productoFiltrado = filtroCategoria(productos, 'armas de fuego');
+    mostrarProductos(productoFiltrado);
 });
 
 catVestimenta.addEventListener('click', () => {
-    filtro = 'vestimenta';
-    mostrarProductos(filtroCategoria(productos, filtro));
+    productoFiltrado = filtroCategoria(productos, 'vestimenta');
+    mostrarProductos(productoFiltrado);
 });
 
 catExplosivos.addEventListener('click', () => {
-    filtro = 'explosivos';
-    mostrarProductos(filtroCategoria(productos, filtro));
+    productoFiltrado = filtroCategoria(productos, 'explosivos');
+    mostrarProductos(productoFiltrado);
 });
 
 formPrecioMayorA.children[1].addEventListener('click', e => {
     e.preventDefault();
-    mostrarProductos(filtroPrecio(productos, formPrecioMayorA.children[0].value, 'mayor'));
+    productoFiltrado = filtroPrecio(productos, formPrecioMayorA.children[0].value, 'mayor');
+    mostrarProductos(productoFiltrado);
 })
 
 formPrecioMenorA.children[1].addEventListener('click', e => {
     e.preventDefault();
-    mostrarProductos(filtroPrecio(productos, formPrecioMenorA.children[0].value, 'menor'));
+    productoFiltrado = filtroPrecio(productos, formPrecioMenorA.children[0].value, 'menor');
+    mostrarProductos(productoFiltrado);
 })
 
 // eventos > orden
 ordNombreAsc.addEventListener('click', () => {
-    mostrarProductos(ordenarNombreAsc(productos));
+    mostrarProductos(ordenarNombreAsc(productoFiltrado));
 })
 
 ordNombreDesc.addEventListener('click', () => {
-    mostrarProductos(ordenarNombreDesc(productos));
+    mostrarProductos(ordenarNombreDesc(productoFiltrado));
 })
 
 ordPrecioAsc.addEventListener('click', () => {
-    mostrarProductos(ordenarPrecioAsc(productos));
+    mostrarProductos(ordenarPrecioAsc(productoFiltrado));
 })
 
 ordPrecioDesc.addEventListener('click', () => {
-    mostrarProductos(ordenarPrecioDesc(productos));
+    mostrarProductos(ordenarPrecioDesc(productoFiltrado));
 })
 
 //eventos >  carrito
@@ -98,4 +98,7 @@ btnCarrito.addEventListener('click', () => {
     document.getElementById('floaty').classList.remove('hidden') :
     document.getElementById('floaty').classList.add('hidden')  
 })
+
 btnVaciarCarrito.addEventListener('click', vaciarCarrito);
+
+btnComprarCarrito.addEventListener('click', comprarCarrito);

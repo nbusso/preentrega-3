@@ -3,6 +3,7 @@ import { productos } from './db_productos.js';
 
 export let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
+let sumaTotal = 0;
 
 export const mostrarCarrito = carrito => {
     contenedorCarrito.innerHTML = '';
@@ -24,15 +25,16 @@ export const mostrarCarrito = carrito => {
                             </button>
         `
         contenedorCarrito.append(div);    
-    })
+    });
 
-    suma.innerText = "$ "+ carrito.reduce(
+    sumaTotal = carrito.reduce(
         (accumulator, item) => accumulator + (item.cantidad * item.precio),
         0,
     );
 
+    suma.innerText = "$ " + sumaTotal;
+
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    console.log(localStorage.getItem('carrito'));
     document.getElementById('contadorCarrito').innerText = carrito.reduce(
         (accumulator, item) => accumulator + item.cantidad, 
         0,
@@ -68,9 +70,54 @@ export const borrarDeCarrito = e => {
 }
 
 export const vaciarCarrito = () => {
-    carrito = [];
-    mostrarCarrito(carrito);
+    if (carrito.length) {
+        Swal.fire({
+            title: "Estas seguro que querés vaciar el carrito?",
+            text: "No hay vuelta atras chum, piénsalo bien!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "red",
+            cancelButtonColor: "#980BBF",
+            confirmButtonText: "Si... VACIALO!",
+            cancelButtonText: 'Cancelar',
+            background: "#000",
+            color: "#fff"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                carrito = [];
+                mostrarCarrito(carrito);
+            }
+        });
+    }
 }
 
-
-
+export const comprarCarrito = () => {
+    if (carrito.length) {
+        Swal.fire({
+            title: "Quieres comprar el carrito?",
+            text: `La suma de tus productos es de $${sumaTotal}!`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "green",
+            cancelButtonColor: "#980BBF",
+            confirmButtonText: "COMPRAR!",
+            cancelButtonText: 'Cancelar',
+            background: "#000",
+            color: "#fff"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Gracias por tu compra!",
+                    text: "Sobrevive para la próxima, chum!",
+                    icon: "success",
+                    confirmButtonColor: "green",
+                    confirmButtonText: "Gracias!",
+                    background: "#000",
+                    color: "#fff"
+                  });
+                carrito = [];
+                mostrarCarrito(carrito);
+            }
+        });
+    }
+}
