@@ -57,7 +57,11 @@ export const agregarAlCarrito = e => {
             }
 
             mostrarCarrito(carrito);
+
+            
     }
+    console.log('add test')
+    document.getElementById('floaty').classList.contains('hidden') && document.getElementById('floaty').classList.remove('hidden');
 }
 
 export const borrarDeCarrito = e => {
@@ -81,7 +85,8 @@ export const vaciarCarrito = () => {
             confirmButtonText: "Si... VACIALO!",
             cancelButtonText: 'Cancelar',
             background: "#000",
-            color: "#fff"
+            color: "#fff",
+            backdrop: `rgba(229, 15, 15, 0.2)`
         }).then((result) => {
             if (result.isConfirmed) {
                 carrito = [];
@@ -103,7 +108,8 @@ export const comprarCarrito = () => {
             confirmButtonText: "COMPRAR!",
             cancelButtonText: 'Cancelar',
             background: "#000",
-            color: "#fff"
+            color: "#fff",
+            backdrop: `rgba(29, 215, 32, 0.15)`
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
