@@ -18,14 +18,14 @@
             <div class="container flex flex-col ml-2 w-1/4 min-w-56">
                 <p id="inicio" class="cursor-pointer hover:bg-gray-600 text-2xl mt-4 pb-3 border-b">Inicio (ver todo)</p>
                 <h3 class="mt-3 text-2xl underline pb-1">Fitros:</h3>
-                <ul class="list-disc pb-3 border-b">
-                    <li class="text-xl">Por Categoria</li>
+                <ul class="pb-3 border-b">
+                    <li class="text-xl font-bold">Por Categoria</li>
                         <ul class="list-disc list-inside">
                             <li id="catArmasDeFuego" class=" cursor-pointer hover:bg-gray-600">Armas de Fuego</li>
                             <li id="catVestimenta" class=" cursor-pointer hover:bg-gray-600">Vestimenta</li>
                             <li id="catExplosivos" class="cursor-pointer hover:bg-gray-600">Explosivos</li>
                         </ul>
-                    <li class="text-xl">Por Precio</li>
+                    <li class="text-xl font-bold">Por Precio</li>
                         <form type="submit" id="formPrecioMayorA">
                             <input class="mb-1 text-black" type="number" name="precioMayorA" id="precioMayorA" placeholder="Precio mayor a:">
                             <button type="submit" id="btnPrecioMayorA" class="bg-cyberpunk-fucsia p-1 rounded-md">
@@ -56,8 +56,8 @@
                 <!-- producto template -->
             </div>
         </div>
-        <footer class="bg-cyberpunk-azul h-[300px]">
-
+        <footer class="flex align-middle items-center bg-cyberpunk-azul h-[100px]">
+            <p class="m-auto italic">Página creada por <a class="font-bold text-cyberpunk-amarillo-1" href="https://github.com/nbusso" target="_blank">Nicolás Busso</a> para el proyecto final del curso de JS @ Coderhouse</p>
         </footer>
     </div>
 

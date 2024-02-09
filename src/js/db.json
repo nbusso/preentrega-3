@@ -6,7 +6,7 @@
       "modelo": "XT-2000",
       "categoria": "Armas de fuego",
       "imagen": "./src/img/rifle-sniper-karmac.jpg",
-      "descripcion": "Lorem ipsum",
+      "descripcion": "1 shot, 1 down.",
       "precio": 5000
     },
     {
@@ -16,7 +16,7 @@
       "modelo": "EL-300",
       "categoria": "Vestimenta",
       "imagen": "./src/img/casco-elventine.jpg",
-      "descripcion": "Lorem ipsum",
+      "descripcion": "No hay nada que proteja más tu cesera que esto, chum!",
       "precio": 950
     },
     {
@@ -26,7 +26,7 @@
       "modelo": "K-BOOM-35",
       "categoria": "Explosivos",
       "imagen": "./src/img/frag-boomcha-1.png",
-      "descripcion": "Lorem ipsum",
+      "descripcion": "BOOM CHAKALAKA!!!",
       "precio": 99
     },
     {
@@ -36,7 +36,7 @@
       "modelo": "K-BOOM-95",
       "categoria": "Explosivos",
       "imagen": "./src/img/frag-boomcha-2.png",
-      "descripcion": "Lorem ipsum",
+      "descripcion": "Chum... no se te ocurra usar esto en un espacio cerrado...",
       "precio": 149
     },
     {
@@ -46,7 +46,7 @@
       "modelo": "EL-100",
       "categoria": "Vestimenta",
       "imagen": "./src/img/guantes-elventine.jpg",
-      "descripcion": "Lorem ipsum",
+      "descripcion": "Aparte de protección, brinda un escándalo de facha.",
       "precio": 350
     },
     {
@@ -56,7 +56,7 @@
       "modelo": "DG-2000",
       "categoria": "Armas de fuego",
       "imagen": "./src/img/pistola-eagle-karmac.jpg",
-      "descripcion": "Lorem ipsum",
+      "descripcion": "Esta era un arma icónica hace 100 años, y hoy lo sigue siendo.",
       "precio": 3200
     },
     {
@@ -66,7 +66,7 @@
       "modelo": "AB-20",
       "categoria": "Armas de fuego",
       "imagen": "./src/img/rifle-asalto-aibuddy.jpeg",
-      "descripcion": "Lorem ipsum",
+      "descripcion": "Lo normal, lo mínimo, lo indispensable.",
       "precio": 2300
     }
   ]
