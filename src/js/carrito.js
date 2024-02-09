@@ -60,7 +60,6 @@ export const agregarAlCarrito = e => {
 
             
     }
-    console.log('add test')
     document.getElementById('floaty').classList.contains('hidden') && document.getElementById('floaty').classList.remove('hidden');
 }
 
